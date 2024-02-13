@@ -16,12 +16,17 @@ total_change = 0
 greatest_increase = 0
 greatest_decrease = 0
 #
+#Iterate through all the rows and compute the changes in profit/losses
+#
 for row_number in range (1, number_of_rows):
 #
     change = profitlosses [row_number] - profitlosses [row_number - 1]
-    
+#
+#Tot up all the changes   
 #
     total_change = total_change + change
+#
+#Compute the greatest increase and decrease and the dates on which they occurred
 #
     if change > greatest_increase:
         greatest_increase = change
@@ -31,7 +36,11 @@ for row_number in range (1, number_of_rows):
         greatest_decrease = change
         date_of_greatest_decrease = dates [row_number]
 #
+#Compute the average change
+#
 average_change = total_change / [number_of_rows - 1]
+#
+#This block prints my findings to the screen and also writes them to a text file
 #
 f = open ('C:/Users/edwar/Downloads/python-challenge/PyBank/analysis/PyBank_output_file.txt', 'a')
 print ('Financial Analysis')
