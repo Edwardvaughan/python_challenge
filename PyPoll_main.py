@@ -12,10 +12,11 @@ candidate = election_data ['Candidate']
 total_votes = len (election_data)
 
 candidates_list = ['' for i in range (10)]
-
 candidates_list [1]  = 'Charles Casper Stockham'
 
 i = 2
+
+#Get a list of the candidates
 
 for row_number in range (2, total_votes):
 
@@ -24,6 +25,8 @@ for row_number in range (2, total_votes):
         candidates_list [i] = candidate [row_number]
 
         i = i + 1
+
+#Avoid repeating names in the list
 
 for j in range (2, i):
 
@@ -36,14 +39,14 @@ for j in range (2, i):
 f = open ('C:/Users/edwar/Downloads/python-challenge/PyPoll/analysis/PyPoll_output_file.txt', 'a')
 
 f.write ('Election Results\n')
-
 f.write ('-------------------------\n')
 
 f.write ('Total Votes: ' + str (total_votes) + '\n')
-
 f.write ('-------------------------\n')
      
 votes = [0 for j in range (i)]
+
+#Count the total number of votes each candidate won
 
 for row_number in range (1, total_votes):
 
@@ -54,6 +57,8 @@ for row_number in range (1, total_votes):
                   votes [j] = votes [j] + 1
 
 percentage_votes = [0 for j in range (i)]
+
+#Express these figures as percentages of the grand total number of votes
 
 for j in range (1, i):
 
@@ -69,6 +74,8 @@ f.write ('-------------------------\n')
 
 winners_vote = 0
 
+#Identify the winner of the election
+
 for j in range (2, i):
 
         if votes [j] == 0:
@@ -82,5 +89,6 @@ for j in range (2, i):
               winner = candidates_list [j]
 
 f.write ('Winner: ' + winner + '\n')
-
 f.write ('-------------------------')
+
+f.close
