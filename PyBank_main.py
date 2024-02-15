@@ -3,12 +3,12 @@
 #Read the financial dataset
 #
 import pandas as pd
-financial_data = pd.read_csv ('C:/Users/edwar/Downloads/python-challenge/PyBank/Resources/budget_data.csv')
+budget_data = pd.read_csv ('C:/Users/edwar/Downloads/python-challenge/PyBank/Resources/budget_data.csv')
 #
-dates = financial_data ['Date']
-profitlosses = financial_data ['Profit/Losses']
+dates = budget_data ['Date']
+profitlosses = budget_data ['Profit/Losses']
 #
-number_of_rows = len (financial_data)
+number_of_rows = len (budget_data)
 #
 total_profitlosses = profitlosses.sum ()
 #
